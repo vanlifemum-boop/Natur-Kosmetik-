@@ -4,7 +4,7 @@ Eine responsive Website rund um vegane Naturkosmetik zum Selbermachen. Die Start
 
 ## Live ansehen
 
-[natuerlich-geruehrt.baumgartner344.chatgpt.site](https://natuerlich-geruehrt.baumgartner344.chatgpt.site)
+[vanlifemum-boop.github.io/Natur-Kosmetik-/](https://vanlifemum-boop.github.io/Natur-Kosmetik-/)
 
 ## Enthalten
 

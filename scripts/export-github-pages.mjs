@@ -27,9 +27,15 @@ if (!response.ok) {
 
 const rewriteRootPaths = (source) =>
   source
+    .replaceAll('"/assets/', '"./assets/')
+    .replaceAll('\\"/assets/', '\\"./assets/')
     .replaceAll('href="/assets/', 'href="./assets/')
     .replaceAll('src="/assets/', 'src="./assets/')
+    .replaceAll('"/favicon.svg"', '"./favicon.svg"')
+    .replaceAll('\\"/favicon.svg\\"', '\\"./favicon.svg\\"')
     .replaceAll('href="/favicon.svg"', 'href="./favicon.svg"')
+    .replaceAll('"/naturkosmetik-hero.png"', '"./naturkosmetik-hero.png"')
+    .replaceAll('\\"/naturkosmetik-hero.png\\"', '\\"./naturkosmetik-hero.png\\"')
     .replaceAll('src="/naturkosmetik-hero.png"', 'src="./naturkosmetik-hero.png"')
     .replaceAll('href="/naturkosmetik-hero.png"', 'href="./naturkosmetik-hero.png"');
 
