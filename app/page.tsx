@@ -163,7 +163,7 @@ export default function Home() {
 
         <div className="hero-visual">
           <img
-            src="/naturkosmetik-hero.png"
+            src="/naturkosmetik-hero-cool.webp"
             alt="Handgemachte Creme, Pflegeöl und festes Pflegestück in einem hellen Pflanzenatelier"
             width="1536"
             height="1024"

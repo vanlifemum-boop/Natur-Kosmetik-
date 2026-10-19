@@ -30,6 +30,6 @@ test("renders the Naturkosmetik landing page", async () => {
   assert.match(html, /<html lang="de">/i);
   assert.match(html, /Natürlich gerührt – Vegane Naturkosmetik/);
   assert.match(html, /Vegane Naturkosmetik selbst machen/);
-  assert.match(html, /naturkosmetik-hero\.png/);
+  assert.match(html, /naturkosmetik-hero-cool\.webp/);
   assert.match(html, /id="rezepte"/);
 });

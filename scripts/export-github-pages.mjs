@@ -37,7 +37,11 @@ const rewriteRootPaths = (source) =>
     .replaceAll('"/naturkosmetik-hero.png"', '"./naturkosmetik-hero.png"')
     .replaceAll('\\"/naturkosmetik-hero.png\\"', '\\"./naturkosmetik-hero.png\\"')
     .replaceAll('src="/naturkosmetik-hero.png"', 'src="./naturkosmetik-hero.png"')
-    .replaceAll('href="/naturkosmetik-hero.png"', 'href="./naturkosmetik-hero.png"');
+    .replaceAll('href="/naturkosmetik-hero.png"', 'href="./naturkosmetik-hero.png"')
+    .replaceAll('"/naturkosmetik-hero-cool.webp"', '"./naturkosmetik-hero-cool.webp"')
+    .replaceAll('\\"/naturkosmetik-hero-cool.webp\\"', '\\"./naturkosmetik-hero-cool.webp\\"')
+    .replaceAll('src="/naturkosmetik-hero-cool.webp"', 'src="./naturkosmetik-hero-cool.webp"')
+    .replaceAll('href="/naturkosmetik-hero-cool.webp"', 'href="./naturkosmetik-hero-cool.webp"');
 
 const html = rewriteRootPaths(await response.text());
 await writeFile(path.join(docs, "index.html"), html);
@@ -51,7 +55,9 @@ if (pageBundle) {
   const bundle = await readFile(bundlePath, "utf8");
   await writeFile(
     bundlePath,
-    bundle.replaceAll("`/naturkosmetik-hero.png`", "`./naturkosmetik-hero.png`"),
+    bundle
+      .replaceAll("`/naturkosmetik-hero.png`", "`./naturkosmetik-hero.png`")
+      .replaceAll("`/naturkosmetik-hero-cool.webp`", "`./naturkosmetik-hero-cool.webp`"),
   );
 }
 
