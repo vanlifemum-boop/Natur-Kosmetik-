@@ -1,6 +1,6 @@
 # Natürlich gerührt
 
-Eine responsive Website rund um vegane Naturkosmetik zum Selbermachen. Die Startseite verbindet Rezeptideen, Rohstoffwissen, Videoformate und wichtige Sicherheitshinweise in einem eigenständigen Markenauftritt.
+Eine farbenfrohe Website rund um vegane Naturkosmetik zum Selbermachen. Flieder, Koralle, Mint und Sonnengelb treffen auf zwölf vollständige Basisideen und verständliche Sicherheitshinweise – ohne beiges Design.
 
 ## Live ansehen
 
@@ -8,14 +8,15 @@ Eine responsive Website rund um vegane Naturkosmetik zum Selbermachen. Die Start
 
 ## Enthalten
 
-- responsive Startseite für Smartphone und Desktop
-- filterbare Rezeptkarten für Gesicht, Haare und Körper
-- Wissensbereich mit Grundlagen zum sicheren Formulieren
-- YouTube- und Video-Bereich
-- eigener Markenauftritt und Hero-Bild
-- barrierearme Navigation und semantische Seitenstruktur
+- responsive Startseite mit eigenem aufklappbaren Handy-Menü
+- zwölf Rezepte: je drei für Gesicht, Haare, Körper sowie Lippen und Hände
+- Suche nach Rezepten und Zutaten, kombinierbar mit dem Pflegebereich
+- aufklappbare Rezepte mit Grammangaben, Utensilien, Schritten, Anwendung und Hinweisen
+- Direktlinks zu jedem Rezept sowie echte Sprunglinks zu allen Seitenbereichen
+- Wissensbereich zu Hygiene, Aufbewahrung und Verträglichkeit mit Quellenlinks
+- Tastaturbedienung, sichtbare Fokusmarkierungen und reduzierte Bewegung
 
-Die Rezeptkarten sind derzeit redaktionelle Beispiele und keine vollständig geprüften Rezepturen. Vor einer Veröffentlichung echter Rezepturen sollten Dosierung, pH-Wert, Konservierung, Allergene und Haltbarkeit fachlich geprüft werden.
+Die Rezepturen sind eigene, nicht laborgeprüfte Basisideen für Erwachsene und intakte Haut. Es werden keine Heil- oder Haltbarkeitsversprechen gegeben. Elf Mischungen sind wasserfrei; die wasserhaltige Hafermaske ist ausschließlich zur sofortigen einmaligen Verwendung gedacht. Vor gewerblicher Nutzung sind fachliche Prüfung und die geltenden Anforderungen erforderlich. Die Quellenlinks erläutern Sicherheitsgrundlagen, nicht die Validierung dieser Rezepturen.
 
 ## Lokal starten
 
@@ -32,8 +33,16 @@ Anschließend die in der Konsole ausgegebene lokale Adresse öffnen.
 
 ```bash
 npm test
-npm run build
+npm run export:pages
 ```
+
+`npm test` baut die Seite, erzeugt den GitHub-Pages-Export und prüft Rezeptdaten, Suche, HTML-Navigation, responsive CSS-Regeln und die exportierten Asset-Pfade. Das ersetzt keinen interaktiven Browser- oder Gerätetest.
+
+## GitHub Pages veröffentlichen
+
+`npm run export:pages` schreibt die statische, vorgerenderte Seite nach `docs/`. Aus derselben React-Seite wird ein eigenständiges Browser-Bundle ohne Vinext-Server-Router erstellt. Damit benötigen auch Vor-/Zurücknavigation und Sprunglinks keinen RSC-Server. Navigation und Rezept-Aufklapper sind native HTML-Elemente; Filter und Suche benötigen JavaScript. Alle Asset-Pfade sind relativ, damit die Seite auch im GitHub-Unterordner `Natur-Kosmetik-` funktioniert.
+
+Quellcode **und** den aktualisierten Ordner `docs/` nach `main` committen. Der Workflow `.github/workflows/pages.yml` veröffentlicht diesen Ordner automatisch über GitHub Pages; er baut den Quellcode nicht erneut. Die Erfolgsmeldung unter GitHub Actions abwarten.
 
 ## Technik
 

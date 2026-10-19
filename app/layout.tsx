@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Natürlich gerührt – Vegane Naturkosmetik",
   description:
-    "Vegane Naturkosmetik selbst machen: verständliche Rezeptideen, Rohstoffwissen und klare Sicherheitshinweise.",
+    "Vegane Naturkosmetik selbst machen: zwölf Basisrezepte für Gesicht, Haare, Körper, Lippen und Hände – mit Mengen, Anleitung und Sicherheitshinweisen.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

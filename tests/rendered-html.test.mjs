@@ -32,4 +32,22 @@ test("renders the Naturkosmetik landing page", async () => {
   assert.match(html, /Vegane Naturkosmetik selbst machen/);
   assert.match(html, /naturkosmetik-hero-cool\.webp/);
   assert.match(html, /id="rezepte"/);
+  assert.match(html, /<meta name="viewport" content="width=device-width, initial-scale=1"/);
+  const markup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "");
+  const ids = [...markup.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(new Set(ids).size, ids.length, "HTML IDs must be unique");
+  const targets = new Set(ids);
+  for (const [, target] of markup.matchAll(/href="#([^"]*)"/g)) {
+    assert.ok(target && targets.has(target), `Missing navigation target: #${target}`);
+  }
+  assert.equal((markup.match(/class="recipe-disclosure"/g) ?? []).length, 12);
+  assert.equal((markup.match(/class="ingredients"/g) ?? []).length, 12);
+  assert.equal((markup.match(/class="recipe-steps"/g) ?? []).length, 12);
+  assert.match(markup, /<details class="mobile-menu"><summary/);
+  assert.match(markup, /aria-label="Mobile Navigation"/);
+  assert.equal((markup.match(/type="radio"/g) ?? []).length, 5);
+  assert.match(markup, /for="recipe-query"/);
+  assert.match(markup, /role="status" aria-live="polite"/);
+  assert.doesNotMatch(markup, /href="(?:#|javascript:[^"]*)"/);
+  assert.doesNotMatch(markup, /#videos|erprobte Rezepte/);
 });
