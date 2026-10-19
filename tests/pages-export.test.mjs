@@ -22,7 +22,9 @@ test("exports assets relative to the GitHub Pages project, including hydration",
   assert.match(html, /<div id="app">/);
   assert.equal((html.match(/class="recipe-disclosure"/g) ?? []).length, 12);
   assert.match(html, /<details class="mobile-menu"><summary/);
-  assert.match(html, /id="rezept-aprikosen-lippenbalsam"/);
+  assert.match(html, /id="bibliothek"/);
+  assert.match(html, /267/);
+  assert.match(html, /255/);
   await access(path.join(docs, ".nojekyll"));
   assert.equal(await readFile(path.join(docs, "404.html"), "utf8"), html);
 });
@@ -49,6 +51,7 @@ test("all manifest entries and JavaScript chunk imports exist in the export", as
   const page = await readFile(path.join(docs, manifest["index.html"].file), "utf8");
   assert.match(page, /\.\/naturkosmetik-hero-cool\.webp/);
   assert.match(page, /hashchange/);
-  assert.match(page, /scrollIntoView/);
+  assert.match(page, /scrollTo/);
+  assert.match(page, /sk-268/);
   assert.doesNotMatch(page, /__VINEXT_RSC|text\/x-component/);
 });
