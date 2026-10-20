@@ -5,28 +5,26 @@ import { ingredientGroups, type ImportedRecipe, type LibraryEntry } from "@/lib/
 function RecipeArt({ shape }: { shape: Recipe["shape"] }) {
   return <svg viewBox="0 0 240 155" fill="none" className="recipe-art" aria-hidden="true">
     <ellipse cx="122" cy="138" rx="57" ry="7" fill="currentColor" opacity=".09" />
-    <path d="M48 38v16m-8-8h16M191 85v12m-6-6h12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    <circle cx="185" cy="33" r="5" stroke="currentColor" strokeWidth="2" />
     <path d="M67 108c-12-19-30-16-24 0 4 10 18 10 24 0Zm1 0c7-26 24-27 24-12-1 11-13 17-24 12Z" fill="currentColor" opacity=".35" />
-    {shape === "bottle" ? <g transform="rotate(9 125 85)">
+    {shape === "bottle" ? <g>
       <rect x="101" y="20" width="43" height="22" rx="8" fill="currentColor" />
-      <path d="M101 41h43v12l12 16v57q0 9-9 9H98q-9 0-9-9V69l12-16Z" fill="white" stroke="currentColor" strokeWidth="3" />
+      <path d="M101 41h43v12l12 16v57q0 9-9 9H98q-9 0-9-9V69l12-16Z" fill="white" stroke="currentColor" strokeWidth="1.8" />
       <rect x="96" y="78" width="53" height="38" rx="6" fill="var(--card-accent)" />
-      <path d="M115 98q13-16 19-11-1 18-19 11Zm2 10 13-15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    </g> : shape === "bar" ? <g transform="rotate(-12 125 87)">
-      <rect x="77" y="56" width="102" height="69" rx="24" fill="white" stroke="currentColor" strokeWidth="3" />
+      <path d="M115 98q13-16 19-11-1 18-19 11Zm2 10 13-15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </g> : shape === "bar" ? <g>
+      <rect x="77" y="56" width="102" height="69" rx="24" fill="white" stroke="currentColor" strokeWidth="1.8" />
       <rect x="86" y="64" width="84" height="48" rx="19" fill="var(--card-accent)" />
-      <path d="M112 91q15-21 26-13-3 23-26 13Zm2 11 19-18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M112 91q15-21 26-13-3 23-26 13Zm2 11 19-18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </g> : shape === "bowl" ? <g>
-      <path d="m133 71 30-48q4-6 9-3t2 9l-24 48" fill="white" stroke="currentColor" strokeWidth="3" />
-      <path d="M69 74h109q-5 56-55 56T69 74Z" fill="white" stroke="currentColor" strokeWidth="3" />
-      <ellipse cx="123" cy="73" rx="54" ry="12" fill="var(--card-accent)" stroke="currentColor" strokeWidth="3" />
-      <path d="M104 103q18 14 37 0" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-    </g> : <g transform="rotate(-7 125 87)">
-      <rect x="77" y="59" width="97" height="72" rx="18" fill="white" stroke="currentColor" strokeWidth="3" />
+      <path d="m133 71 30-48q4-6 9-3t2 9l-24 48" fill="white" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M69 74h109q-5 56-55 56T69 74Z" fill="white" stroke="currentColor" strokeWidth="1.8" />
+      <ellipse cx="123" cy="73" rx="54" ry="12" fill="var(--card-accent)" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M114 106q8-18 24-14-1 18-24 14Zm1 5 16-13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </g> : <g>
+      <rect x="77" y="59" width="97" height="72" rx="18" fill="white" stroke="currentColor" strokeWidth="1.8" />
       <rect x="72" y="44" width="107" height="24" rx="9" fill="currentColor" />
       <rect x="86" y="81" width="79" height="32" rx="5" fill="var(--card-accent)" />
-      <path d="M119 97q0-10 7-5 8-5 8 5l-8 7Z" fill="currentColor" />
+      <path d="M116 103q5-17 20-15 1 16-20 15Zm1 4 14-13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </g>}
   </svg>;
 }

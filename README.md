@@ -1,6 +1,6 @@
 # Natürlich gerührt
 
-Eine farbenfrohe Website rund um vegane Naturkosmetik zum Selbermachen. Flieder, Koralle, Mint und Sonnengelb treffen auf eine durchsuchbare Bibliothek mit 267 Einträgen und verständliche Sicherheitshinweise – ohne beiges Design.
+Eine ruhige Website rund um vegane Naturkosmetik zum Selbermachen. Gedecktes Salbei- und Waldgrün, kühles Weiß und klare Serifenschrift begleiten eine durchsuchbare Bibliothek mit 267 Einträgen. Dezente Pflanzenmotive, gerade Bildrahmen und zurückhaltende Rezeptkarten prägen das natürliche Design – ohne Beige.
 
 ## Live ansehen
 

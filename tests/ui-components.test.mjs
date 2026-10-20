@@ -45,7 +45,8 @@ test("emits the site's responsive brand styles", async () => {
   assert.match(css, /@media\s*\(width<=900px\)/);
   assert.match(css, /@media\s*\(width<=520px\)/);
   assert.match(css, /\.mobile-menu\{display:block\}/);
-  assert.match(css, /\.recipe-grid\{grid-template-columns:1fr\}/);
+  const mobileCss = css.match(/@media\s*\(width<=520px\)\{([^@]+)/)?.[1] ?? "";
+  assert.ok(/(?:^|[},])\.recipe-grid(?:,[^{]+)?\{[^}]*grid-template-columns:1fr(?:;|})/.test(mobileCss), "Recipe cards must use one column on small screens, including grouped CSS selectors");
   assert.match(css, /prefers-reduced-motion/);
 });
 

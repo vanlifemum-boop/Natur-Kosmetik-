@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
-import { ArrowDown, ArrowRight, BookOpen, ChevronDown, Flower2, Heart, Leaf, Menu, Search, ShieldCheck, Sparkles, X } from "lucide-react";
+import { ArrowDown, ArrowRight, BookOpen, ChevronDown, Leaf, Menu, Search, ShieldCheck, X } from "lucide-react";
 import { preparationNote } from "@/lib/recipes";
 import { defaultFilters, filtersForRecipe, importMetadata, libraryCategories, libraryCounts, libraryEntries, libraryTopics, PAGE_SIZE, paginateLibrary, recipeIdFromHash, type LibraryFilters } from "@/lib/library";
 import { isPlainNavigationClick, scrollToPageTarget } from "@/lib/scroll-navigation";
@@ -65,9 +65,9 @@ export default function Home() {
 
   return <div className="site-shell" onClick={handleAnchorClick}>
     <a className="skip-link" href="#inhalt">Zum Inhalt springen</a>
-    <div className="announcement"><Flower2 size={15} aria-hidden="true" /> Ein bisschen DIY. Ein bisschen Zeit für dich. <Flower2 size={15} aria-hidden="true" /></div>
+    <div className="announcement"><Leaf size={14} aria-hidden="true" /> Zeit für dich. Pflege bewusst selbst gemacht.</div>
     <header className="site-header">
-      <a className="brand" href="#start" aria-label="Natürlich gerührt – Startseite" ><span className="brand-mark"><Flower2 aria-hidden="true" /></span><span>Natürlich<br /><em>gerührt.</em></span></a>
+      <a className="brand" href="#start" aria-label="Natürlich gerührt – Startseite" ><span className="brand-mark"><Leaf aria-hidden="true" /></span><span>Natürlich<br /><em>gerührt.</em></span></a>
       <nav className="main-nav" aria-label="Hauptnavigation">{navigation.map((item) => <a key={item.href} href={item.href} >{item.label}</a>)}</nav>
       <a className="header-cta" href="#bibliothek" >Bibliothek <ArrowRight size={17} aria-hidden="true" /></a>
       <details className="mobile-menu" ref={menuRef} onKeyDown={(event) => { if (event.key === "Escape") { closeMenu(); menuRef.current?.querySelector("summary")?.focus(); } }}>
@@ -79,26 +79,24 @@ export default function Home() {
     <main id="inhalt" tabIndex={-1}>
       <section className="hero page-width" id="start">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Dein buntes Rühratelier</p>
-          <h1>Selbst gerührt.<br /><em>Ganz du.</em></h1>
-          <p className="hero-intro">Dein buntes Nachschlagewerk für Naturkosmetik. Finde Pflegeideen, entdecke Zutaten und sammle Wissen für deinen nächsten Rührmoment.</p>
-          <div className="hero-actions"><a className="button button-coral" href="#bibliothek" >Rezeptbibliothek entdecken <ArrowDown size={18} aria-hidden="true" /></a><a className="text-link" href="#so-gehts">Wie fange ich an? <ArrowRight size={17} aria-hidden="true" /></a></div>
-          <div className="hero-facts"><span><Leaf size={16} /> Nach Pflegebereich stöbern</span><span><Heart size={16} /> Zutaten gezielt finden</span></div>
+          <p className="eyebrow"><Leaf size={16} aria-hidden="true" /> Rezepte, Zutaten & Wissen</p>
+          <h1>Naturkosmetik.<br /><em>Selbst gerührt.</em></h1>
+          <p className="hero-intro">Pflege selbst herstellen, Zutaten verstehen und bewusste Rituale entdecken. Deine Sammlung für kleine Momente im Alltag.</p>
+          <div className="hero-actions"><a className="button button-primary" href="#bibliothek">Rezeptbibliothek öffnen <ArrowDown size={18} aria-hidden="true" /></a><a className="text-link" href="#so-gehts">In Ruhe anfangen <ArrowRight size={17} aria-hidden="true" /></a></div>
+          <div className="hero-facts"><span><Leaf size={16} aria-hidden="true" /> Nach Pflegebereich stöbern</span><span><BookOpen size={16} aria-hidden="true" /> Zutaten gezielt finden</span></div>
         </div>
-        <div className="hero-visual">
-          <span className="hero-doodle" aria-hidden="true">✳</span>
+        <figure className="hero-visual">
           <div className="photo-frame"><img src="./naturkosmetik-hero-cool.webp" alt="Creme, Pflegeöl und grünes Pflegestück mit frischen Blättern auf weißem Untergrund" width="1536" height="1024" fetchPriority="high" /></div>
-          <div className="hero-sticker"><Sparkles size={22} aria-hidden="true" /><strong>{libraryCounts.all}</strong><span>Einträge zum<br />Entdecken</span></div>
-          <span className="photo-note">Ein Löffel Neugier, bitte. <Heart size={16} aria-hidden="true" /></span>
-        </div>
+          <figcaption className="photo-caption"><span>Von der Zutat zum eigenen Pflegeritual.</span><span className="photo-count"><strong>{libraryCounts.all}</strong> Einträge entdecken</span></figcaption>
+        </figure>
       </section>
 
-      <div className="happy-strip" aria-label="Rezeptbereiche"><span>Gesicht <Flower2 /></span><span>Haare <Sparkles /></span><span>Körper <Heart /></span><span>Lippen & Hände <Leaf /></span></div>
+      <div className="care-strip" aria-label="Rezeptbereiche"><span>Gesichtspflege</span><span>Haarpflege</span><span>Körperpflege</span><span>Lippen & Hände</span></div>
 
       <section className="recipe-section page-width" id="bibliothek" aria-labelledby="library-heading">
         <span id="rezepte" className="anchor-alias" aria-hidden="true" />
         <div className="section-heading">
-          <div><p className="eyebrow"><BookOpen size={16} /> Dein persönliches Rührregal</p><h2 id="library-heading">Die Rezept-<br /><span>bibliothek.</span></h2></div>
+          <div><p className="eyebrow"><BookOpen size={16} /> Deine Sammlung</p><h2 id="library-heading">Rezepte &<br /><span>Pflegewissen.</span></h2></div>
           <p>Alle {importMetadata.count} Einträge aus deiner Datei<br />und {libraryCounts.basis} eigene Basisrezepte an einem Ort.</p>
         </div>
         <div className="library-stats" aria-label="Umfang der Bibliothek">
@@ -127,7 +125,7 @@ export default function Home() {
         </div>
         <LibraryPagination page={collection.page} pages={collection.pages} position="oben" onChange={changePage} />
         <div className="recipe-grid">{collection.entries.map((entry) => <LibraryCard key={entry.id} entry={entry} />)}</div>
-        {collection.results.length === 0 && <div className="empty-state"><Flower2 size={40} /><h3>Hier hat sich noch nichts eingerührt.</h3><p>Versuche einen anderen Suchbegriff oder setze deine Filter zurück.</p><button className="button button-dark" type="button" onClick={resetLibrary}>Alle {libraryCounts.all} Einträge anzeigen</button></div>}
+        {collection.results.length === 0 && <div className="empty-state"><Leaf size={40} /><h3>Keine passenden Einträge.</h3><p>Versuche einen anderen Suchbegriff oder setze deine Filter zurück.</p><button className="button button-dark" type="button" onClick={resetLibrary}>Alle {libraryCounts.all} Einträge anzeigen</button></div>}
         <LibraryPagination page={collection.page} pages={collection.pages} position="unten" onChange={changePage} />
         <aside className="recipe-editorial-note"><ShieldCheck size={20} aria-hidden="true" /><p><strong>Die Sammlung ist vollständig, die Rezeptdaten nicht immer.</strong> Alle {importMetadata.count} Rezept-/DIY-Einträge der Datei sind enthalten. {libraryCounts.zutaten} haben Zutatennotizen, bei {libraryCounts.quelle} fehlen Mengenangaben. Keine importierte Zutatenliste ersetzt die vollständige Anleitung. Auch die {libraryCounts.basis} eigenen Basisrezepte sind nicht laborgeprüft. <a href="#wissen">Hinweise lesen.</a></p></aside>
         <p className="library-provenance">Importstand: 24.08.2026 · Quellenrezepte: <a href={importMetadata.sourceUrl} target="_blank" rel="noopener noreferrer">Schwatz Katz</a>. Fehlende Anleitungen und Premiuminhalte wurden nicht ergänzt.</p>
@@ -143,7 +141,7 @@ export default function Home() {
       </div></section>
 
       <section className="knowledge-section page-width" id="wissen">
-        <div className="knowledge-intro"><div className="knowledge-flower" aria-hidden="true"><Flower2 size={58} /></div><p className="eyebrow">Ein bisschen Wissen rührt mit</p><h2>Natürlich.<br />Und mit <em>Bedacht.</em></h2><p>Selbstgemacht ist nicht automatisch besser verträglich. Diese Grundlagen gehören zu jedem Rezept.</p></div>
+        <div className="knowledge-intro"><div className="knowledge-mark" aria-hidden="true"><Leaf size={58} /></div><p className="eyebrow">Wissen für deine Pflege</p><h2>Natürlich.<br />Und mit <em>Bedacht.</em></h2><p>Selbstgemacht ist nicht automatisch besser verträglich. Diese Grundlagen gehören zu jedem Rezept.</p></div>
         <div className="knowledge-list">
           <details open><summary>Was brauche ich für einen sauberen Start?<ChevronDown size={20} /></summary><p>{preparationNote}</p></details>
           <details><summary>Welche Einträge enthalten eine vollständige Anleitung?<ChevronDown size={20} /></summary><p>Die zwölf eigenen Basisrezepte enthalten Mengen, Herstellung und Anwendung. Die 255 Einträge aus der Datei sind Quellenrezepte: 181 enthalten automatisch erfasste Zutatennotizen, 74 nur einen Quellenverweis beziehungsweise keine erkannten Mengen. Auch vorhandene Zutatenlisten können unvollständig sein. Fehlende Phasen, Zeiten, Temperaturen oder Konservierungsangaben werden hier nicht erfunden – bitte im Original nachlesen.</p></details>
@@ -153,8 +151,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-section page-width" id="ueber-uns"><div><p className="eyebrow">Die Idee hinter Natürlich gerührt</p><h2>Mehr Neugier.<br /><span>Weniger Rätselraten.</span></h2><p>Ein buntes Rühratelier für alle, die wissen möchten, was in ihrer Pflege steckt. Mit übersichtlichen Zutaten, ehrlichen Grenzen und Freude am Ausprobieren – ohne Perfektionsdruck.</p><a className="button button-dark" href="#bibliothek" >Zur Bibliothek <ArrowRight size={18} /></a></div><div className="about-note"><Heart size={36} aria-hidden="true" /><p>Deine Pflege.<br />Dein Tempo.<br /><em>Dein kleiner Moment.</em></p><span>Mit Neugier gerührt.</span></div></section>
+      <section className="about-section page-width" id="ueber-uns"><div><p className="eyebrow">Die Idee hinter Natürlich gerührt</p><h2>Mehr Neugier.<br /><span>Weniger Rätselraten.</span></h2><p>Ein Ort für alle, die ihre Pflege bewusst selbst gestalten möchten. Mit übersichtlichen Zutaten, verständlichem Wissen und Raum, in deinem eigenen Tempo Neues auszuprobieren.</p><a className="button button-dark" href="#bibliothek" >Zur Bibliothek <ArrowRight size={18} /></a></div><div className="about-note"><Leaf size={32} strokeWidth={1.4} aria-hidden="true" /><p>Deine Pflege.<br />Dein Tempo.<br /><em>Dein kleiner Moment.</em></p><span>Mit Zeit und Aufmerksamkeit.</span></div></section>
     </main>
-    <footer className="site-footer"><div className="page-width"><a className="brand" href="#start"><Flower2 size={30} aria-hidden="true" /><span>Natürlich <em>gerührt.</em></span></a><nav aria-label="Fußnavigation">{navigation.map((item) => <a key={item.href} href={item.href} >{item.label}</a>)}</nav><p>Rezeptbibliothek und Pflegeideen. Kein Shop, keine medizinische Beratung.</p><a className="back-top" href="#start">Nach oben ↑</a></div></footer>
+    <footer className="site-footer"><div className="page-width"><a className="brand" href="#start"><Leaf size={30} aria-hidden="true" /><span>Natürlich <em>gerührt.</em></span></a><nav aria-label="Fußnavigation">{navigation.map((item) => <a key={item.href} href={item.href} >{item.label}</a>)}</nav><p>Rezeptbibliothek und Pflegeideen. Kein Shop, keine medizinische Beratung.</p><a className="back-top" href="#start">Nach oben ↑</a></div></footer>
   </div>;
 }
