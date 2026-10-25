@@ -32,7 +32,7 @@ const renderer = await createServer({
   appType: "custom",
   root,
   resolve: { alias: { "@": root } },
-  server: { middlewareMode: true },
+  server: { middlewareMode: true, hmr: false, watch: null },
 });
 try {
   const { default: Home } = await renderer.ssrLoadModule("/app/page.tsx");

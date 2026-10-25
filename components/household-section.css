@@ -1,0 +1,122 @@
+.household-section { padding-block: 80px; background: var(--mist); border-block: 1px solid var(--line); }
+.household-heading-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; }
+.household-heading-row h2 { font-size: clamp(2.2rem, 4vw, 3.65rem); line-height: 1.13; margin: 0; }
+.household-heading-row h2 span { color: var(--sage-deep); font-style: italic; }
+.household-heading-row > p { max-width: 365px; margin: 0 0 3px; color: var(--muted-ink); font-size: .88rem; }
+.household-jump-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0 25px; }
+.household-jump-links a { display: inline-flex; align-items: center; gap: 9px; min-height: 48px; padding: 10px 15px; background: #fff; border: 1px solid var(--line); border-radius: 6px; font-size: .77rem; font-weight: 600; }
+.household-jump-links a:hover { border-color: var(--sage-deep); background: var(--sage); }
+.household-jump-count { display: inline-flex; justify-content: center; align-items: center; min-width: 23px; min-height: 23px; border-radius: 50%; background: var(--sage); font-size: .67rem; }
+.household-source-note { display: flex; align-items: flex-start; gap: 13px; padding: 22px 24px; background: var(--sage); border-left: 3px solid var(--sage-deep); border-radius: 0 6px 6px 0; font-size: .8rem; }
+.household-source-note > svg { flex-shrink: 0; margin-top: 2px; color: var(--sage-deep); }
+.household-source-note strong { font-size: .86rem; }
+.household-source-note p { margin: 5px 0 10px; max-width: 900px; color: var(--muted-ink); }
+.household-source-note a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; text-decoration: underline; text-underline-offset: 3px; }
+.household-source-note a svg { flex-shrink: 0; }
+.household-group { margin-top: 52px; }
+.household-group-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 21px; }
+.household-group-heading > div { display: flex; align-items: baseline; gap: 13px; }
+.household-group-index { font-family: Georgia, serif; color: var(--sage-deep); font-size: 1.25rem; }
+.household-group-heading h3 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.4rem, 2.2vw, 1.85rem); line-height: 1.3; font-weight: 400; letter-spacing: -.02em; }
+.household-group-heading > p { margin: 0; max-width: 360px; color: var(--muted-ink); font-size: .76rem; }
+.household-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.household-entry { min-width: 0; border: 1px solid var(--line); background: #fff; border-radius: 7px; overflow: hidden; }
+.household-entry:hover { border-color: #a6b8a9; }
+.household-entry:target, .household-soap:target { box-shadow: 0 0 0 3px var(--sage-deep); }
+.household-disclosure > summary { list-style: none; cursor: pointer; }
+.household-disclosure > summary::-webkit-details-marker { display: none; }
+.household-entry > .household-disclosure > summary { padding: 22px 24px 15px; }
+.household-disclosure > summary:focus-visible { outline-offset: -5px; border-radius: 6px; }
+.household-entry-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--sage-deep); font-size: .67rem; }
+.household-entry-number { font-weight: 600; text-transform: uppercase; letter-spacing: .07em; }
+.household-entry-time { display: inline-flex; align-items: center; gap: 5px; color: var(--muted-ink); font-variant-numeric: tabular-nums; }
+.household-entry h4 { font-family: Georgia, serif; font-size: 1.3rem; font-weight: 400; line-height: 1.3; letter-spacing: -.01em; margin: 13px 0 9px; }
+.household-entry-summary { margin: 0 0 18px; color: var(--muted-ink); font-size: .81rem; }
+.household-entry-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; border-top: 1px solid var(--line); padding-top: 11px; font-size: .75rem; font-weight: 600; }
+.household-entry-toggle > svg { flex-shrink: 0; }
+.household-close-label, .household-disclosure[open] > summary .household-open-label { display: none; }
+.household-disclosure[open] > summary .household-close-label { display: inline; }
+.household-disclosure[open] > summary .household-entry-toggle > svg, .household-soap-disclosure[open] > summary > svg { transform: rotate(180deg); }
+.household-entry-body { padding: 0 24px 23px; font-size: .82rem; line-height: 1.75; }
+.household-entry-body h5 { margin: 21px 0 8px; font-size: .88rem; font-weight: 600; }
+.household-entry-body p { margin: 8px 0; }
+.household-entry-body > h5:first-child { margin-top: 12px; }
+.household-ingredients { list-style: none; padding: 0; margin: 12px 0 18px; }
+.household-ingredients li { display: grid; grid-template-columns: minmax(72px, .35fr) minmax(0, 1fr); gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.household-ingredients strong, .household-ingredients span { overflow-wrap: anywhere; }
+.household-equipment, .household-duration { color: var(--muted-ink); }
+.household-entry-note { margin: 16px 0 12px; padding: 12px 15px; background: var(--mist); border: 1px dashed #adbdaf; border-radius: 5px; font-size: .76rem; }
+.household-entry-note strong { display: block; }
+.household-entry-note p, .household-entry-warning p { margin: 4px 0 0; }
+.household-entry-warning { display: flex; align-items: flex-start; gap: 9px; margin: 14px 0 18px; padding: 13px 15px; background: var(--sage); border-left: 3px solid var(--sage-deep); border-radius: 0 5px 5px 0; font-size: .76rem; }
+.household-entry-warning > svg { flex-shrink: 0; margin-top: 2px; }
+.household-entry-warning strong { display: block; }
+.household-steps { padding-left: 21px; margin: 9px 0 20px; }
+.household-steps li { margin-bottom: 10px; padding-left: 3px; }
+.household-steps li::marker { font-weight: 600; color: var(--green); }
+.household-entry-sources { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin-top: 23px; padding-top: 10px; border-top: 1px solid var(--line); }
+.household-entry-sources a { display: flex; align-items: center; gap: 8px; min-height: 44px; padding-block: 7px; font-size: .73rem; text-decoration: underline; text-underline-offset: 3px; }
+.household-entry-sources a svg { flex-shrink: 0; }
+.household-entry-sources .household-permalink { width: 100%; justify-content: space-between; margin-top: 6px; font-weight: 600; }
+.household-soap { background: #fff; border: 1px solid #b6c8bb; border-radius: 8px; overflow: hidden; }
+.household-soap-heading { display: flex; align-items: flex-start; gap: 22px; padding: 31px 32px 24px; }
+.household-soap-icon { width: 58px; height: 58px; display: grid; place-items: center; flex-shrink: 0; border-radius: 50%; background: var(--sage); color: var(--green); }
+.household-soap-kicker { margin: 0 0 8px; color: var(--sage-deep); font-size: .67rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.household-soap-heading h4 { margin: 0; font-size: clamp(1.45rem, 2.4vw, 2rem); line-height: 1.3; font-family: Georgia, serif; font-weight: 400; letter-spacing: -.02em; }
+.household-soap-heading h4 + p { margin: 9px 0 0; font-size: .85rem; color: var(--muted-ink); max-width: 800px; }
+.household-soap-safety { margin: 0 32px 25px; padding: 18px 22px; background: var(--sage); border-left: 3px solid var(--sage-deep); border-radius: 0 6px 6px 0; }
+.household-soap-safety h5 { display: flex; align-items: center; gap: 9px; margin: 0 0 9px; font-size: .86rem; font-weight: 600; }
+.household-soap-safety h5 > svg { flex-shrink: 0; }
+.household-soap-safety p { margin: 8px 0 0; font-size: .79rem; line-height: 1.8; }
+.household-soap-disclosure { border-top: 1px solid var(--line); }
+.household-soap-disclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 15px; min-height: 64px; padding: 17px 32px; font-size: .9rem; font-weight: 600; }
+.household-soap-disclosure > summary:hover { background: var(--mist); }
+.household-soap-disclosure .household-entry-body { padding: 0 32px 29px; max-width: 900px; }
+.household-soap-disclosure .household-ingredients li { grid-template-columns: 90px minmax(0, 1fr); }
+.household-guidance { margin-top: 42px; padding-top: 27px; border-top: 1px solid var(--line); }
+.household-guidance > h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; font-size: 1rem; font-weight: 600; }
+.household-guidance > h3 > svg { flex-shrink: 0; }
+.household-guidance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 34px; }
+.household-guidance h4 { margin: 0 0 7px; font-size: .85rem; font-weight: 600; }
+.household-guidance p { margin: 0; color: var(--muted-ink); font-size: .77rem; }
+.household-guidance a { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding-block: 9px; font-size: .73rem; text-decoration: underline; text-underline-offset: 3px; }
+.household-guidance a > svg { flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .household-heading-row { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .household-heading-row > p { max-width: 540px; }
+  .household-group-heading { align-items: flex-start; flex-direction: column; gap: 9px; }
+  .household-group-heading > p { max-width: none; }
+  .household-entry > .household-disclosure > summary { padding-inline: 20px; }
+  .household-entry-body { padding-inline: 20px; }
+}
+@media (max-width: 760px) {
+  .household-section { padding-block: 48px; }
+  .household-heading-row h2 { font-size: clamp(2.2rem, 8.7vw, 3.4rem); }
+  .household-group { margin-top: 35px; }
+  .household-source-note { padding: 17px; }
+  .household-source-note > svg { display: none; }
+  .household-soap-heading { padding: 23px; gap: 15px; }
+  .household-soap-icon { width: 44px; height: 44px; }
+  .household-soap-icon > svg { width: 24px; height: 24px; }
+  .household-soap-safety { margin-inline: 23px; padding: 15px; }
+  .household-soap-disclosure > summary, .household-soap-disclosure .household-entry-body { padding-inline: 23px; }
+}
+@media (max-width: 600px) {
+  .household-grid, .household-guidance-grid { grid-template-columns: 1fr; }
+  .household-jump-links { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .household-jump-links a { justify-content: flex-start; }
+  .household-jump-links a > svg:last-child { margin-left: auto; }
+  .household-group-heading > div { gap: 10px; }
+  .household-entry > .household-disclosure > summary { padding-inline: 22px; }
+  .household-entry-body { padding-inline: 22px; }
+  .household-guidance-grid { gap: 17px; }
+  .household-soap-heading { flex-direction: column; }
+}
+@media print {
+  .household-section { padding-block: 25px; background: #fff; }
+  .household-jump-links { display: none; }
+  .household-grid { display: block; }
+  .household-entry, .household-soap { break-inside: avoid; margin-bottom: 18px; }
+  .household-entry-toggle, .household-permalink { display: none; }
+}

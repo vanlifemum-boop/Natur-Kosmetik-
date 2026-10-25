@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Natürlich gerührt – Rezeptbibliothek",
   description:
-    "Naturkosmetik-Rezeptbibliothek mit 267 Einträgen für Gesicht, Haare, Körper, Lippen und Hände. Mit Suche, Zutatennotizen, Basisrezepten und Originalquellen.",
+    "Naturkosmetik-Rezeptbibliothek mit 267 Einträgen. Neu: Haushaltsmittel selbst gemacht mit allen 20 Tipps aus dem Video und einem zusätzlichen Rezept für Pflanzenöl-Seife.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

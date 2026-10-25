@@ -11,7 +11,9 @@ export function scrollTopForTarget(targetTop: number, pageScroll: number, sticky
 export function scrollToPageTarget(id: string, documentRef: Document = document, windowRef: Window = window) {
   const target = documentRef.getElementById(id);
   if (!target) return false;
-  const disclosure = id.startsWith("rezept-") ? target.querySelector<HTMLDetailsElement>("details.recipe-disclosure") : null;
+  const disclosure = id.startsWith("rezept-") || id.startsWith("haushalt-")
+    ? target.querySelector<HTMLDetailsElement>("details.recipe-disclosure, details.household-disclosure")
+    : null;
   if (disclosure) disclosure.open = true;
   const header = documentRef.querySelector<HTMLElement>(".site-header");
   const fixedHeader = header && ["sticky", "fixed"].includes(windowRef.getComputedStyle(header).position);

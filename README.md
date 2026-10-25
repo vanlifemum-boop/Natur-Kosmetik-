@@ -19,6 +19,14 @@ Eine ruhige Website rund um vegane Naturkosmetik zum Selbermachen. Gedecktes Sal
 - Wissensbereich zu Hygiene, Aufbewahrung und Verträglichkeit mit Quellenlinks
 - Tastaturbedienung, sichtbare Fokusmarkierungen und reduzierte Bewegung
 
+## Neu: Haushaltsmittel selbst gemacht
+
+Die eigene Rubrik `#haushaltsmittel` ergänzt die Naturkosmetik-Bibliothek um alle 20 nummerierten Tipps aus [dem Video von Helena’s Haushalt](https://www.youtube.com/watch?v=IDxt0Ykmih8): ein Waschpulver-Grundrezept, zwölf weitere Hausmittel-Anwendungen und sieben ergänzende Wasch-, Erklär- und Spartipps. Zusätzlich enthält sie ein palmölfreies Seifenrezept nach [Tanya Anderson / Lovely Greens](https://lovelygreens.com/eco-friendly-cold-process-soap-recipe-instructions/).
+
+`lib/household.ts` bewahrt die Video-Mengen einschließlich fehlender Maße sowie die unterschiedlichen Dosierangaben von 2 EL und später 1,5 EL für Frontlader. Grundlage sind die vollständigen automatischen deutschen Untertitel, geprüft am 25.10.2026. YouTube kennzeichnet das Video als KI-generiert. Die Texte sind eigenständig zusammengefasst; Wirkungs- und Sparversprechen werden nicht bestätigt. Unvollständige oder problematische Anwendungen sind als Quellenangaben mit konkreten Einschränkungen dokumentiert. Insbesondere wird keine Konzentration für den Peroxid-Tipp erfunden.
+
+Alle 21 Einträge sind ohne Pagination im HTML vorhanden und über `#haushalt-<id>` direkt erreichbar. Native Aufklapper enthalten Zutaten, Schritte, Quellen mit Zeitmarken und Hinweise. Die Sicherheitsmaßnahmen für das Seifensieden sind schon vor dem Öffnen der Anleitung sichtbar. Quellen zur Materialverträglichkeit, Kalkseife und Lauge stehen direkt an den betreffenden Einträgen. Die 267 bisherigen Kosmetik-Einträge und ihre Filter bleiben erhalten.
+
 ## Herkunft und Grenzen der Rezeptdaten
 
 `data/imported-recipes.json` enthält die 255 Einträge aus den Tabellenblättern „Rezeptdaten“ und „Zutaten einzeln“. Die Datei nennt Schwatz Katz als Originalquelle und den 24.08.2026 als Erfassungsstand. Die Originaltitel und Quellenlinks bleiben sichtbar. Redaktionsplanung, Bildkonzepte und YouTube-Ideen wurden nicht veröffentlicht.

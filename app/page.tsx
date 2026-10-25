@@ -7,9 +7,11 @@ import { defaultFilters, filtersForRecipe, importMetadata, libraryCategories, li
 import { isPlainNavigationClick, scrollToPageTarget } from "@/lib/scroll-navigation";
 import { LibraryCard } from "@/components/recipe-library-card";
 import { LibraryPagination } from "@/components/library-pagination";
+import { HouseholdSection } from "@/components/household-section";
 
 const navigation = [
   { href: "#bibliothek", label: "Bibliothek" },
+  { href: "#haushaltsmittel", label: "Haushaltsmittel" },
   { href: "#so-gehts", label: "So geht’s" },
   { href: "#wissen", label: "Gut zu wissen" },
   { href: "#ueber-uns", label: "Unsere Idee" },
@@ -82,7 +84,7 @@ export default function Home() {
           <p className="eyebrow"><Leaf size={16} aria-hidden="true" /> Rezepte, Zutaten & Wissen</p>
           <h1>Naturkosmetik.<br /><em>Selbst gerührt.</em></h1>
           <p className="hero-intro">Pflege selbst herstellen, Zutaten verstehen und bewusste Rituale entdecken. Deine Sammlung für kleine Momente im Alltag.</p>
-          <div className="hero-actions"><a className="button button-primary" href="#bibliothek">Rezeptbibliothek öffnen <ArrowDown size={18} aria-hidden="true" /></a><a className="text-link" href="#so-gehts">In Ruhe anfangen <ArrowRight size={17} aria-hidden="true" /></a></div>
+          <div className="hero-actions"><a className="button button-primary" href="#bibliothek">Rezeptbibliothek öffnen <ArrowDown size={18} aria-hidden="true" /></a><a className="text-link" href="#haushaltsmittel">Neu: Haushaltsmittel selbst gemacht <ArrowRight size={17} aria-hidden="true" /></a></div>
           <div className="hero-facts"><span><Leaf size={16} aria-hidden="true" /> Nach Pflegebereich stöbern</span><span><BookOpen size={16} aria-hidden="true" /> Zutaten gezielt finden</span></div>
         </div>
         <figure className="hero-visual">
@@ -131,6 +133,8 @@ export default function Home() {
         <p className="library-provenance">Importstand: 24.08.2026 · Quellenrezepte: <a href={importMetadata.sourceUrl} target="_blank" rel="noopener noreferrer">Schwatz Katz</a>. Fehlende Anleitungen und Premiuminhalte wurden nicht ergänzt.</p>
       </section>
 
+      <HouseholdSection />
+
       <section className="how-section" id="so-gehts"><div className="page-width">
         <div className="section-heading"><div><p className="eyebrow">Neu hier? Willkommen!</p><h2>Drei Schritte.<br /><span>Dein erster Tiegel.</span></h2></div><a className="text-link" href="#rezept-jojoba-gesichtsoel" >Mit einem einfachen Öl starten <ArrowRight size={18} /></a></div>
         <div className="steps-grid">
@@ -153,6 +157,6 @@ export default function Home() {
 
       <section className="about-section page-width" id="ueber-uns"><div><p className="eyebrow">Die Idee hinter Natürlich gerührt</p><h2>Mehr Neugier.<br /><span>Weniger Rätselraten.</span></h2><p>Ein Ort für alle, die ihre Pflege bewusst selbst gestalten möchten. Mit übersichtlichen Zutaten, verständlichem Wissen und Raum, in deinem eigenen Tempo Neues auszuprobieren.</p><a className="button button-dark" href="#bibliothek" >Zur Bibliothek <ArrowRight size={18} /></a></div><div className="about-note"><Leaf size={32} strokeWidth={1.4} aria-hidden="true" /><p>Deine Pflege.<br />Dein Tempo.<br /><em>Dein kleiner Moment.</em></p><span>Mit Zeit und Aufmerksamkeit.</span></div></section>
     </main>
-    <footer className="site-footer"><div className="page-width"><a className="brand" href="#start"><Leaf size={30} aria-hidden="true" /><span>Natürlich <em>gerührt.</em></span></a><nav aria-label="Fußnavigation">{navigation.map((item) => <a key={item.href} href={item.href} >{item.label}</a>)}</nav><p>Rezeptbibliothek und Pflegeideen. Kein Shop, keine medizinische Beratung.</p><a className="back-top" href="#start">Nach oben ↑</a></div></footer>
+    <footer className="site-footer"><div className="page-width"><a className="brand" href="#start"><Leaf size={30} aria-hidden="true" /><span>Natürlich <em>gerührt.</em></span></a><nav aria-label="Fußnavigation">{navigation.map((item) => <a key={item.href} href={item.href} >{item.label}</a>)}</nav><p>Naturkosmetik, Haushaltsmittel und Seife zum Selbermachen. Kein Shop, keine medizinische Beratung.</p><a className="back-top" href="#start">Nach oben ↑</a></div></footer>
   </div>;
 }
